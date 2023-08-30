@@ -2,9 +2,14 @@ import { Facebook, Github, Instagram, Linkedin, Twitter, Youtube } from "lucide-
 import Link from "next/link"
 import { platform } from "os"
 
-const SocialLink = ({plateform, link}: {
+const SocialLink = ({
+    plateform, 
+    link, 
+    isShareURL = false,
+}: {
     plateform: string,
-    link: string
+    link: string,
+    isShareURL?: boolean
 }) => {
 
     const getIcon = (plateform: string) => {
@@ -25,7 +30,13 @@ const SocialLink = ({plateform, link}: {
     }
 
 
-    return <Link href={link}>{getIcon(plateform)}</Link>
+    return (
+        <Link href={link}>
+            <div className={`${isShareURL ? "py-2 px-3 bg-neutral-200 rounded-md text-neutral-600 hover:bg-neutral-600 hover:text-neutral-100 duration-200 ease-in-out transition-colors" : ""}`}>
+                {getIcon(plateform)}
+            </div>
+        </Link>
+    );
 }
 
 export default SocialLink
