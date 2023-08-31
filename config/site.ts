@@ -14,7 +14,7 @@ export interface SiteConfig {
 const siteConfig: SiteConfig = {
     siteName: "Explorer",
     description: "A minimal and lovely travel blog which shares experiences and citiest around the world!",
-    currentlyAt: "Budapest",
+    currentlyAt: "Limoges",
     socialLinks: {
         twitter: "https://www.twitter.com/yourtwitter",
         youtube: "https://www.youtube.com/youryoutube",
